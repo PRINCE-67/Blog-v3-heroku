@@ -179,6 +179,10 @@ app.get("/logout", function(req, res){
   });
 });
 
-app.listen(4000,function(){
+let port=process.env.PORT;
+if(port == null || port == ""){
+  port=4000;
+}
+app.listen(port,function(){
   console.log("server started on port:4000");
 });
